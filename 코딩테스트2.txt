@@ -1,0 +1,53 @@
+1. 2
+2. 4
+3. 1
+4. 3
+5. 2
+6. 
+#include <iostream>
+using namespace std;
+#include <cstring>
+
+int main() {
+	string min, you;
+	cin >> min >> you;
+	for (int i = 0; i < min.size(); i++) {
+		if (min[i] > you[i]) {
+			cout << "sir";
+			break;
+		}
+		else if (min[i] < you[i]) {
+			cout << "kid";
+			break;
+		}
+	}
+}
+7.
+#include <iostream>
+using namespace std;
+#include <vector>
+
+int main() {
+	int n;
+	cin >> n;
+	vector<int> s[50];
+	for (int i = 0; i < n; i++) {
+		int a, char b;
+		cin >> a >> b;
+		s[i].push_back(a);
+		if ('a' <= b && b <= 'z') {
+			s[i].push_back(b - 96);
+		}
+		else if ('A' <= b && b <= 'Z') {
+			s[i].push_back(b - 96);
+		}
+	}
+	int f;
+	cin >> f;
+	int now_place = 1 + f;
+	for (int i = 0; i < n; i++) {
+		if (now_place == s[i][0]) {
+			now_place += s[i][1];
+		}
+	}
+	cout << now_place;
